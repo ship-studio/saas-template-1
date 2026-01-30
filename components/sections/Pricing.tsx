@@ -62,7 +62,7 @@ export function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02]">
+    <section id="pricing" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
       <Container>
         <SectionHeading
           badge="Pricing"

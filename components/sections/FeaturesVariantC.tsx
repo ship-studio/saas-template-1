@@ -107,7 +107,7 @@ const features = [
 
 export function FeaturesVariantC() {
   return (
-    <section id="features" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02]">
+    <section id="features" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
       <Container>
         <SectionHeading
           badge="Features"

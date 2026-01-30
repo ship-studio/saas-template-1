@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/Button";
 // Variation B: Centered with large product screenshot below
 export function HeroVariantB() {
   return (
-    <section className="relative pt-40 pb-0 lg:pt-48 overflow-hidden">
-      {/* Background gradient */}
+    <section className="relative pt-28 pb-0 lg:pt-36 overflow-hidden">
+      {/* Background gradient + grid */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/5 via-transparent to-transparent" />
         <div
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute inset-0 bg-grid"
           style={{
-            backgroundImage: `radial-gradient(var(--foreground) 1px, transparent 1px)`,
-            backgroundSize: '24px 24px',
+            maskImage: 'linear-gradient(to bottom, black 0%, transparent 60%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 60%)',
           }}
         />
       </div>

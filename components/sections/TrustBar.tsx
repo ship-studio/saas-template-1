@@ -11,7 +11,7 @@ const logos = [
 
 export function TrustBar() {
   return (
-    <section className="py-12 lg:py-16 border-y border-[var(--border)] bg-[var(--background)]">
+    <section className="py-12 lg:py-16 border-t border-[var(--border)] bg-[var(--background)]">
       <Container>
         <p className="text-center text-xs font-medium text-[var(--muted)] mb-8 uppercase tracking-widest">
           Trusted by teams at

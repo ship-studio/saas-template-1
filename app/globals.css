@@ -20,8 +20,8 @@
   --color-accent-dark: var(--accent-dark);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --font-sans: var(--font-body);
-  --font-display: var(--font-display);
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-figtree);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,4 +51,13 @@ html {
 ::selection {
   background: var(--accent-light);
   color: var(--accent-dark);
+}
+
+/* Grid background pattern */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.6;
 }

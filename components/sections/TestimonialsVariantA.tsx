@@ -61,6 +61,12 @@ export function TestimonialsVariantA() {
   };
 
   useEffect(() => {
+    // Start scrolled to middle card
+    if (scrollRef.current) {
+      const cardWidth = 400 + 24; // card width + gap
+      const middleIndex = Math.floor(testimonials.length / 2);
+      scrollRef.current.scrollLeft = middleIndex * cardWidth - (scrollRef.current.clientWidth / 2) + 200;
+    }
     checkScroll();
     const ref = scrollRef.current;
     if (ref) {
@@ -78,7 +84,7 @@ export function TestimonialsVariantA() {
   };
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 border-t border-[var(--border)]">
       <Container>
         <div className="flex items-end justify-between mb-12">
           <SectionHeading
@@ -125,7 +131,7 @@ export function TestimonialsVariantA() {
       {/* Slider */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
+        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {testimonials.map((testimonial, index) => (
@@ -133,7 +139,7 @@ export function TestimonialsVariantA() {
             key={index}
             className="flex-shrink-0 w-[350px] md:w-[400px] snap-start"
           >
-            <div className="h-full flex flex-col p-6 lg:p-8 rounded-2xl border border-[var(--border)] bg-[var(--background)] hover:shadow-lg hover:border-[var(--accent)]/30 transition-all duration-300">
+            <div className="h-full flex flex-col p-6 lg:p-8 rounded-2xl border border-[var(--border)] bg-[var(--foreground)]/[0.02] hover:shadow-xl hover:border-[var(--accent)]/30 transition-all duration-300">
               {/* Quote mark */}
               <div className="text-[var(--accent)]/10 mb-4">
                 <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">

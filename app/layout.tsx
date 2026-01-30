@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
 import { AgentationProvider } from "@/components/AgentationProvider";
 
-const spaceGrotesk = Space_Grotesk({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-figtree",
   display: "swap",
 });
 
@@ -26,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <body className="font-[family-name:var(--font-body)] antialiased">
+    <html lang="en" className={figtree.variable}>
+      <body className="font-[family-name:var(--font-figtree)] antialiased">
         {children}
         <AgentationProvider />
       </body>

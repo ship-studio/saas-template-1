@@ -154,7 +154,7 @@ function MockupImage({ type }: { type: string }) {
 
 export function FeatureShowcase() {
   return (
-    <section className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02]">
+    <section className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
       <Container>
         <div className="space-y-24 lg:space-y-32">
           {showcaseFeatures.map((feature, index) => (

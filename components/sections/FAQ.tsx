@@ -41,7 +41,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32">
+    <section id="faq" className="py-24 lg:py-32 border-t border-[var(--border)]">
       <Container size="md">
         <SectionHeading
           badge="FAQ"

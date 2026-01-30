@@ -3,12 +3,11 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroVariantB } from "@/components/sections/HeroVariantB";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { FeaturesVariantC } from "@/components/sections/FeaturesVariantC";
-import { Divider } from "@/components/ui/Divider";
 import { FeatureShowcase } from "@/components/sections/FeatureShowcase";
 import { TestimonialsVariantA } from "@/components/sections/TestimonialsVariantA";
 import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
-import { CTA } from "@/components/sections/CTA";
+import { CTAVariantC } from "@/components/sections/CTAVariantC";
 
 export default function Home() {
   return (
@@ -18,12 +17,11 @@ export default function Home() {
         <HeroVariantB />
         <TrustBar />
         <FeaturesVariantC />
-        <Divider />
         <FeatureShowcase />
         <TestimonialsVariantA />
         <Pricing />
         <FAQ />
-        <CTA />
+        <CTAVariantC />
       </main>
       <Footer />
     </div>
