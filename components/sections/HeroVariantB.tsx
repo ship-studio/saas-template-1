@@ -28,11 +28,10 @@ export function HeroVariantB() {
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
             className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-[var(--foreground)] mb-6"
           >
-            The fastest way to
-            <span className="lg:block">
-              <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent">
-                ship products
-              </span>
+            <span className="lg:whitespace-nowrap">The fastest way to</span>{" "}
+            <br className="hidden lg:block" />
+            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent">
+              ship products
             </span>
           </motion.h1>
 
@@ -118,8 +117,41 @@ export function HeroVariantB() {
               </div>
             </div>
 
-            {/* Dashboard content */}
-            <div className="p-6 lg:p-8">
+            {/* Mobile: Simplified dashboard */}
+            <div className="p-4 md:hidden">
+              <div className="space-y-3">
+                {/* Stats row */}
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: "Revenue", value: "$48,234", change: "+12.5%" },
+                    { label: "Users", value: "2,543", change: "+8.2%" },
+                  ].map((stat, i) => (
+                    <div key={i} className="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)]">
+                      <div className="text-[10px] text-[var(--muted)] mb-0.5">{stat.label}</div>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-base font-semibold text-[var(--foreground)]">{stat.value}</span>
+                        <span className="text-[10px] text-green-500">{stat.change}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Chart */}
+                <div className="h-32 rounded-xl bg-[var(--background)] border border-[var(--border)] p-3 flex items-end">
+                  <div className="flex items-end gap-1.5 w-full h-full">
+                    {[35, 55, 40, 70, 50, 65, 55, 80, 45, 70, 85, 60].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 bg-gradient-to-t from-[var(--accent)] to-[var(--accent)]/60 rounded-sm"
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop: Full dashboard */}
+            <div className="hidden md:block p-6 lg:p-8">
               <div className="grid grid-cols-12 gap-6">
                 {/* Sidebar */}
                 <div className="col-span-2 space-y-2">
