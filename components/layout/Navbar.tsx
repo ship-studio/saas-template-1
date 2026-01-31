@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
@@ -18,7 +19,7 @@ export function Navbar() {
       <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-[var(--accent)] flex items-center justify-center transition-transform group-hover:scale-105">
               <svg
                 className="w-5 h-5 text-white"
@@ -37,7 +38,7 @@ export function Navbar() {
             <span className="font-[family-name:var(--font-display)] font-bold text-xl text-[var(--foreground)]">
               LaunchKit
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -54,10 +55,14 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Sign in
-            </Button>
-            <Button size="sm">Get started</Button>
+            <Link href="/login">
+              <Button variant="ghost" size="sm">
+                Sign in
+              </Button>
+            </Link>
+            <Link href="/signup">
+              <Button size="sm">Get started</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,12 +102,16 @@ export function Navbar() {
               ))}
             </div>
             <div className="flex flex-col gap-2 pt-4 mt-4 border-t border-[var(--border)]">
-              <Button variant="ghost" size="sm" className="w-full justify-center">
-                Sign in
-              </Button>
-              <Button size="sm" className="w-full justify-center">
-                Get started
-              </Button>
+              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" size="sm" className="w-full justify-center">
+                  Sign in
+                </Button>
+              </Link>
+              <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
+                <Button size="sm" className="w-full justify-center">
+                  Get started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

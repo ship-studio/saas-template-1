@@ -37,16 +37,63 @@ Dark mode is supported and switches automatically based on system preference.
 ### Homepage (`/`)
 The main landing page with all sections:
 
-1. **Navbar** - Fixed at top with logo, navigation links (Features, Pricing, FAQ), and CTA buttons
-2. **Hero** - Centered layout with gradient text, large product screenshot extending to edge
+1. **Navbar** - Fixed at top with logo, navigation links (Features, Pricing, FAQ), and CTA buttons (Sign in → /login, Get started → /signup)
+2. **Hero** - Centered layout with gradient text, animated entrance, large product screenshot
 3. **Trust Bar** - "Trusted by teams at..." with placeholder company logos
 4. **Features** - Bento-style grid with 4 features, one large accent card
 5. **Feature Showcase** - 3 alternating left/right detailed feature blocks with mockups
-6. **Testimonials** - 3 customer quotes with star ratings
+6. **Testimonials** - 9 customer testimonials in auto-scrolling slider with fade edges
 7. **Pricing** - 3 tiers (Free, Pro, Enterprise) with monthly/annual toggle
 8. **FAQ** - 6 questions in accordion format
 9. **Final CTA** - Blue banner with call to action
 10. **Footer** - 4-column navigation, social links, legal
+
+### Features Page (`/features`)
+Dedicated page showcasing all product features:
+
+1. **Hero** - Large headline, dual CTAs, inline trust indicators
+2. **Stats** - 4 key metrics in animated cards with hover effects
+3. **Build Features** - Cards for templates, workflows, deployment, collaboration
+4. **Automate Features** - Cards for CI/CD, testing, monitoring, scaling
+5. **Analyze Features** - Cards for dashboards, reporting, insights, tracking
+6. **Integrations** - Grid of 8 tool integrations (GitHub, Slack, etc.)
+7. **Final CTA** - Conversion banner
+
+### Pricing Page (`/pricing`)
+Dedicated pricing page with detailed comparison:
+
+1. **Hero** - Headline with billing toggle (monthly/annual)
+2. **Pricing Cards** - 3 tiers with staggered animations
+3. **Feature Comparison Table** - Detailed comparison organized by category
+4. **FAQ** - Pricing-specific questions
+5. **Final CTA** - Conversion banner
+
+### Login Page (`/login`)
+Authentication page for existing users:
+
+- Split layout: form left, decorative panel right
+- Google OAuth button with official branding
+- Email and password fields with show/hide toggle
+- "Forgot password?" link
+- Link to signup page
+- Customer testimonial quote on decorative panel
+
+### Signup Page (`/signup`)
+Registration page for new users:
+
+- Split layout: decorative panel left, form right
+- Google OAuth button with official branding
+- Email and password fields
+- Terms of Service checkbox
+- Link to login page
+- Feature list on decorative panel
+
+### Forgot Password Flow (`/forgot-password`)
+Three-step password reset flow:
+
+1. **Email Entry** (`/forgot-password`) - Enter email to receive reset code
+2. **Code Verification** (`/forgot-password/verify`) - Enter 6-digit code with auto-advance inputs, paste support, resend option
+3. **Password Reset** (`/forgot-password/reset`) - Enter and confirm new password with validation feedback, redirects to login
 
 ---
 
@@ -61,6 +108,8 @@ The main landing page with all sections:
 | **Card** | Bordered card with optional hover effects |
 | **SectionHeading** | Badge + title + description pattern for sections |
 | **Badge** | Small labels (default, accent, success, warning variants) |
+| **SectionChip** | Unified badge with pulsing dot, accent-light background |
+| **ScrollReveal** | Scroll-triggered animation wrapper (fade-up, stagger) |
 
 ### Layout Components (in `components/layout/`)
 
@@ -135,6 +184,43 @@ The main landing page with all sections:
 ---
 
 ## Recent Changes
+
+- **Forgot Password Flow**: Added 3-step password reset:
+  - Email entry page
+  - 6-digit code verification with auto-advance, paste support
+  - New password page with match validation
+  - Redirects to login on completion
+
+- **Login & Signup Pages**: Added authentication pages with:
+  - Split layouts with decorative panels
+  - Google OAuth buttons
+  - Email/password forms with show/hide toggle
+  - Terms checkbox on signup
+  - Cross-linking between login and signup
+  - Navbar buttons now link to these pages
+
+- **Features Page**: Created dedicated features page with:
+  - Hero with dual CTAs and trust indicators
+  - Animated stats section with hover effects
+  - 3 feature category sections (Build, Automate, Analyze)
+  - Integrations grid
+  - Final CTA
+
+- **Pricing Page**: Created dedicated pricing page with:
+  - Billing toggle (monthly/annual with 20% discount)
+  - 3 pricing tiers with staggered animations
+  - Feature comparison table organized by category
+  - Pricing FAQ accordion
+  - Final CTA
+
+- **Homepage Enhancements**:
+  - Added light grid background that fades out in hero
+  - Created SectionChip component for consistent badges
+  - Added scroll reveal animations throughout
+  - Expanded testimonials to 9 with auto-scrolling slider
+  - Added fade gradients on testimonial edges
+  - Made hero h1 larger with "ship products" on its own line
+  - Fixed mobile responsiveness (hero illustration, trust indicators)
 
 - **Polish Pass**: Audited and refined every section:
   - Hero: Fixed navbar overlap, improved background gradient, removed distracting decorative shapes
