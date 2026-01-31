@@ -3,14 +3,14 @@ import { Container } from "@/components/ui/Container";
 const footerLinks = {
   Product: [
     { label: "Features", href: "/features" },
+    { label: "Integrations", href: "/integrations" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Changelog", href: "#" },
-    { label: "Roadmap", href: "#" },
+    { label: "Changelog", href: "/changelog" },
   ],
   Company: [
     { label: "About", href: "/about" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
+    { label: "Blog", href: "/blog" },
+    { label: "Careers", href: "/careers" },
     { label: "Press", href: "#" },
   ],
   Resources: [

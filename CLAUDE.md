@@ -319,7 +319,11 @@ This template comes with these pre-built pages:
 |------|------|-------------|
 | Homepage | `/` | Hero, features, testimonials, pricing, FAQ, CTA |
 | Features | `/features` | Detailed feature showcase with categories |
+| Integrations | `/integrations` | 200+ integrations with filtering |
 | Pricing | `/pricing` | Pricing cards, comparison table, FAQ |
+| Changelog | `/changelog` | Version history with release notes |
+| Blog | `/blog` | Blog listing with categories (Sanity CMS-ready) |
+| Blog Article | `/blog/[slug]` | Individual blog post template |
 | About | `/about` | Company story, values, team members |
 | Contact | `/contact` | Contact form (Formspark-ready) + contact info |
 | Login | `/login` | Email/password + Google OAuth |

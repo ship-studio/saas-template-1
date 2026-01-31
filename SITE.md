@@ -95,6 +95,62 @@ Three-step password reset flow:
 2. **Code Verification** (`/forgot-password/verify`) - Enter 6-digit code with auto-advance inputs, paste support, resend option
 3. **Password Reset** (`/forgot-password/reset`) - Enter and confirm new password with validation feedback, redirects to login
 
+### Blog Page (`/blog`)
+Static blog listing page:
+
+- Hero with SectionChip and description
+- Featured post with gradient background
+- Category filter (All, Product, Engineering, Company, Tutorials)
+- 6 placeholder blog post cards with author, date, read time
+- Load more button
+- Sticky Sanity CMS banner at bottom (dismissible)
+
+### Changelog Page (`/changelog`)
+Version history and release notes:
+
+- Hero with email subscribe form
+- Timeline layout with version dots
+- Entries with version badge, date, title, description
+- Change items with type badges (New, Improved, Fixed)
+- Color-coded badges (green/blue/amber)
+- Feature request CTA section
+- Sticky Sanity CMS banner
+
+### Careers Page (`/careers`)
+Job listings and company culture showcase:
+
+- Hero with "We're Hiring" SectionChip
+- Stats section (45+ team members, 15+ countries, 4.9 Glassdoor, 92% recommend)
+- Culture section with description and emoji-illustrated culture cards
+- Benefits grid (6 cards: competitive salary, remote-first, unlimited PTO, learning budget, health benefits, home office stipend)
+- Open positions listing with department filter (All, Engineering, Design, Marketing, Sales)
+- 6 placeholder job listings with department badges and location tags
+- CTA section with gradient background
+
+### Blog Article Page (`/blog/[slug]`)
+Individual blog post template:
+
+- Breadcrumb navigation (Blog / Category)
+- Article header with category, date, read time
+- Large title and excerpt
+- Author info with avatar
+- Rich article content with styled typography
+- Blockquote styling with accent background
+- Share buttons (Twitter, LinkedIn, Copy link)
+- Author bio card
+- Related posts section (3 posts)
+- Sticky Sanity CMS banner at bottom
+
+### Integrations Page (`/integrations`)
+Showcase of all available integrations:
+
+- Hero with search bar
+- Featured integrations (Slack, GitHub, Notion) with detailed cards
+- Category filter (All, Communication, Development, Productivity, Analytics, Design)
+- Grid of 30+ integrations with icons and colors
+- Developer API section with code example
+- CTA banner
+
 ### About Page (`/about`)
 Company information and team page:
 
@@ -204,6 +260,35 @@ Contact form with business information:
 ---
 
 ## Recent Changes
+
+- **Careers Page**: Added careers page with:
+  - Hero section with "We're Hiring" badge
+  - Stats section matching features page style
+  - Culture and benefits sections
+  - Open positions with department filtering
+  - CTA section
+  - Added to Navbar Company dropdown and Footer
+
+- **Blog Page**: Added blog page with:
+  - Featured post hero with gradient background
+  - Category filtering
+  - 6 placeholder blog post cards
+  - Sticky Sanity CMS banner at bottom
+  - Added to navbar Company dropdown
+
+- **Navbar Redesign**: Added dropdown menus:
+  - Product dropdown (Features, Integrations, Pricing)
+  - Company dropdown (About, Blog, Contact)
+  - Each with icons and descriptions
+  - Mobile accordion menus
+
+- **Integrations Page**: Added integrations page with:
+  - Hero with search bar
+  - 3 featured integration cards (Slack, GitHub, Notion)
+  - Category filter with 6 categories
+  - 30+ integration cards in a filterable grid
+  - Developer API section with code snippet
+  - CTA banner
 
 - **About Page**: Added about page with:
   - Hero section with mission statement
