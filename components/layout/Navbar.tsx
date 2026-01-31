@@ -48,6 +48,49 @@ const productLinks = [
   },
 ];
 
+const resourcesLinks = [
+  {
+    label: "Privacy",
+    href: "/privacy",
+    description: "How we protect your data",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Terms",
+    href: "/terms",
+    description: "Terms of service agreement",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Cookies",
+    href: "/cookies",
+    description: "Our cookie policy",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+      </svg>
+    ),
+  },
+  {
+    label: "Licenses",
+    href: "/licenses",
+    description: "Software and open source",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+      </svg>
+    ),
+  },
+];
+
 const companyLinks = [
   {
     label: "About",
@@ -259,6 +302,58 @@ export function Navbar() {
                 </div>
               </div>
             </div>
+
+            {/* Resources Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("resources")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors rounded-lg hover:bg-[var(--foreground)]/5">
+                Resources
+                <svg
+                  className={`w-4 h-4 transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full right-0 pt-2 transition-all duration-200 ${
+                  activeDropdown === "resources"
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <div className="w-64 bg-white rounded-xl border border-[var(--border)] shadow-xl shadow-[var(--foreground)]/5 p-2">
+                  {resourcesLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-[var(--foreground)]/5 transition-colors group"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                        {link.icon}
+                      </div>
+                      <div>
+                        <div className="font-medium text-[var(--foreground)] text-sm">
+                          {link.label}
+                        </div>
+                        <div className="text-xs text-[var(--muted)]">
+                          {link.description}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Desktop CTA */}
@@ -293,7 +388,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-            mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            mobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="py-4 border-t border-[var(--border)]">
@@ -353,11 +448,48 @@ export function Navbar() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-200 ${
-                  mobileAccordion === "company" ? "max-h-48" : "max-h-0"
+                  mobileAccordion === "company" ? "max-h-64" : "max-h-0"
                 }`}
               >
                 <div className="pl-4 py-1 space-y-1">
                   {companyLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="block px-3 py-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--border)]/50 rounded-lg transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Resources Accordion */}
+            <div className="mb-1">
+              <button
+                onClick={() => setMobileAccordion(mobileAccordion === "resources" ? null : "resources")}
+                className="flex items-center justify-between w-full px-3 py-2.5 text-sm font-medium text-[var(--foreground)] hover:bg-[var(--border)]/50 rounded-lg transition-colors"
+              >
+                Resources
+                <svg
+                  className={`w-4 h-4 text-[var(--muted)] transition-transform ${mobileAccordion === "resources" ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-200 ${
+                  mobileAccordion === "resources" ? "max-h-48" : "max-h-0"
+                }`}
+              >
+                <div className="pl-4 py-1 space-y-1">
+                  {resourcesLinks.map((link) => (
                     <Link
                       key={link.label}
                       href={link.href}

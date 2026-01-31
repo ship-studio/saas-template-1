@@ -274,7 +274,9 @@ export default function BlogPage() {
                   Dismiss
                 </button>
                 <a
-                  href="#"
+                  href="https://www.sanity.io/get-started"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-4 py-2 text-sm font-semibold text-[var(--foreground)] bg-white hover:bg-white/90 rounded-lg transition-colors"
                 >
                   Set up Sanity CMS
