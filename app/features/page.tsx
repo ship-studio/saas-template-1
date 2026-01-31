@@ -312,7 +312,7 @@ export default function FeaturesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[var(--foreground)] mb-6"
+                className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-[var(--foreground)] mb-6"
               >
                 Everything you need to{" "}
                 <br className="hidden sm:block" />
@@ -325,29 +325,45 @@ export default function FeaturesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg sm:text-xl text-[var(--muted)] mb-12 leading-relaxed max-w-2xl mx-auto"
+                className="text-lg sm:text-xl text-[var(--muted)] mb-10 leading-relaxed max-w-2xl mx-auto"
               >
                 A complete platform for building, shipping, and scaling your product.
                 From idea to launch in record time.
               </motion.p>
 
-              {/* Hero feature cards */}
+              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+              >
+                <Button size="lg">
+                  Start building free
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Button>
+                <Button variant="secondary" size="lg">
+                  View pricing
+                </Button>
+              </motion.div>
+
+              {/* Trust indicators */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-[var(--muted)]"
               >
                 {heroFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="p-5 rounded-2xl bg-white border border-[var(--border)] hover:border-[var(--accent)]/30 hover:shadow-lg transition-all duration-300 text-center"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center mb-3 mx-auto">
-                      {feature.icon}
+                  <div key={index} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                    <h3 className="font-semibold text-[var(--foreground)] mb-1">{feature.title}</h3>
-                    <p className="text-sm text-[var(--muted)]">{feature.description}</p>
+                    <span>{feature.title}</span>
                   </div>
                 ))}
               </motion.div>
@@ -356,20 +372,25 @@ export default function FeaturesPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 border-y border-[var(--border)] bg-[var(--foreground)]/[0.02]">
+        <section className="py-20 border-y border-[var(--border)]">
           <Container>
-            <ScrollReveal>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="font-[family-name:var(--font-display)] text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-2">
-                      {stat.value}
+            <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6" staggerDelay={0.1}>
+              {stats.map((stat, index) => (
+                <StaggerItem key={index}>
+                  <div className="relative group p-6 lg:p-8 rounded-2xl bg-white border border-[var(--border)] hover:border-[var(--accent)]/30 hover:shadow-xl transition-all duration-300 text-center overflow-hidden">
+                    {/* Background decoration */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--accent)]/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" />
+
+                    <div className="relative">
+                      <div className="font-[family-name:var(--font-display)] text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--foreground)] to-[var(--foreground)]/70 bg-clip-text text-transparent mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm text-[var(--muted)] font-medium">{stat.label}</div>
                     </div>
-                    <div className="text-sm text-[var(--muted)]">{stat.label}</div>
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </Container>
         </section>
 
