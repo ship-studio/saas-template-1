@@ -1,5 +1,8 @@
+"use client";
+
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
 // Variation C: Large cards with mini illustrations/mockups
 const features = [
@@ -109,35 +112,36 @@ export function FeaturesVariantC() {
   return (
     <section id="features" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
       <Container>
-        <SectionHeading
-          badge="Features"
-          title="Everything you need to ship"
-          description="A complete toolkit for building modern products. No assembly required."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            badge="Features"
+            title="Everything you need to ship"
+            description="A complete toolkit for building modern products. No assembly required."
+          />
+        </ScrollReveal>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StaggerContainer className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6" staggerDelay={0.1}>
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl border border-[var(--border)] bg-[var(--background)] overflow-hidden hover:shadow-xl hover:border-[var(--accent)]/30 transition-all duration-300"
-            >
-              {/* Visual */}
-              <div className="overflow-hidden">
-                {feature.visual}
-              </div>
+            <StaggerItem key={index}>
+              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--background)] overflow-hidden hover:shadow-xl hover:border-[var(--accent)]/30 transition-all duration-300">
+                {/* Visual */}
+                <div className="overflow-hidden">
+                  {feature.visual}
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--foreground)] mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-[var(--muted)] leading-relaxed">
-                  {feature.description}
-                </p>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--foreground)] mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const showcaseFeatures = [
   {
@@ -165,7 +168,7 @@ export function FeatureShowcase() {
               }`}
             >
               {/* Content */}
-              <div className="flex-1 max-w-lg">
+              <ScrollReveal className="flex-1 max-w-lg" delay={0.1}>
                 <Badge variant="accent" className="mb-4">
                   {feature.badge}
                 </Badge>
@@ -195,12 +198,12 @@ export function FeatureShowcase() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </ScrollReveal>
 
               {/* Image */}
-              <div className="flex-1 w-full max-w-xl lg:max-w-none">
+              <ScrollReveal className="flex-1 w-full max-w-xl lg:max-w-none" delay={0.2}>
                 <MockupImage type={feature.image} />
-              </div>
+              </ScrollReveal>
             </div>
           ))}
         </div>

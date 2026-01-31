@@ -3,8 +3,17 @@
 import { useRef, useState, useEffect } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const testimonials = [
+  {
+    quote:
+      "Went from zero to launching in production in under a month. The templates saved us weeks of design work.",
+    name: "James Whitfield",
+    role: "Co-founder",
+    company: "Basecamp Labs",
+    avatar: "JW",
+  },
   {
     quote:
       "We launched our MVP in 3 weeks instead of 3 months. LaunchKit handled all the complexity so we could focus on what our customers actually needed.",
@@ -20,6 +29,14 @@ const testimonials = [
     role: "Head of Product",
     company: "Relay",
     avatar: "MJ",
+  },
+  {
+    quote:
+      "Finally, a tool that gets out of my way. I built our entire customer portal in a weekend without touching backend code.",
+    name: "Priya Sharma",
+    role: "Product Designer",
+    company: "Luminary",
+    avatar: "PS",
   },
   {
     quote:
@@ -39,11 +56,27 @@ const testimonials = [
   },
   {
     quote:
+      "Our conversion rate jumped 28% after rebuilding our signup flow with LaunchKit. The A/B testing features are a game changer.",
+    name: "Nina Kowalski",
+    role: "Growth Lead",
+    company: "Finch",
+    avatar: "NK",
+  },
+  {
+    quote:
       "We've 10x'd our development speed since switching to LaunchKit. Our engineering team actually enjoys shipping now.",
     name: "Amanda Foster",
     role: "VP Engineering",
     company: "Metric",
     avatar: "AF",
+  },
+  {
+    quote:
+      "Replaced three different tools with LaunchKit. Simpler stack, lower costs, happier team. Should have switched sooner.",
+    name: "Tom Bradley",
+    role: "Technical Lead",
+    company: "Orbit",
+    avatar: "TB",
   },
 ];
 
@@ -86,6 +119,7 @@ export function TestimonialsVariantA() {
   return (
     <section className="py-24 lg:py-32 border-t border-[var(--border)]">
       <Container>
+        <ScrollReveal>
         <div className="flex items-end justify-between mb-12">
           <SectionHeading
             badge="Testimonials"
@@ -126,14 +160,21 @@ export function TestimonialsVariantA() {
             </button>
           </div>
         </div>
+        </ScrollReveal>
       </Container>
 
       {/* Slider */}
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
+      <div className="relative">
+        {/* Fade left */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        {/* Fade right */}
+        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
+
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -174,6 +215,7 @@ export function TestimonialsVariantA() {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

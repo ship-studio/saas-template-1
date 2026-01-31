@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
 const plans = [
   {
@@ -64,13 +65,16 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-24 lg:py-32 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
       <Container>
-        <SectionHeading
-          badge="Pricing"
-          title="Simple, transparent pricing"
-          description="Start free, upgrade when you need to. No hidden fees, no surprises."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            badge="Pricing"
+            title="Simple, transparent pricing"
+            description="Start free, upgrade when you need to. No hidden fees, no surprises."
+          />
+        </ScrollReveal>
 
         {/* Billing Toggle */}
+        <ScrollReveal delay={0.1}>
         <div className="flex items-center justify-center gap-4 mt-10">
           <span
             className={`text-sm font-medium transition-colors ${
@@ -100,13 +104,14 @@ export function Pricing() {
             <Badge variant="success">Save 20%</Badge>
           </span>
         </div>
+        </ScrollReveal>
 
         {/* Pricing Cards */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+        <StaggerContainer className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start" staggerDelay={0.1}>
           {plans.map((plan, index) => (
+            <StaggerItem key={index}>
             <div
-              key={index}
-              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-all duration-300 ${
+              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-all duration-300 h-full ${
                 plan.popular
                   ? "border-[var(--accent)] bg-[var(--background)] shadow-xl shadow-[var(--accent)]/10 md:-mt-4 md:mb-4"
                   : "border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)]/30 hover:shadow-lg"
@@ -185,13 +190,16 @@ export function Pricing() {
                 ))}
               </ul>
             </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Money-back guarantee */}
+        <ScrollReveal delay={0.3}>
         <p className="text-center text-sm text-[var(--muted)] mt-12">
           All paid plans include a 14-day free trial. No credit card required to start.
         </p>
+        </ScrollReveal>
       </Container>
     </section>
   );
