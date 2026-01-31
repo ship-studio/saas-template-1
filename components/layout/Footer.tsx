@@ -2,8 +2,8 @@ import { Container } from "@/components/ui/Container";
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Features", href: "/#features" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Changelog", href: "#" },
     { label: "Roadmap", href: "#" },
   ],
