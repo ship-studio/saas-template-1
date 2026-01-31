@@ -17,8 +17,7 @@ export function SectionChip({ children, animate = false, className = "" }: Secti
         px-4 py-1.5
         text-xs font-semibold uppercase tracking-wider
         text-[var(--accent-dark)]
-        bg-gradient-to-r from-[var(--accent)]/10 to-[var(--accent)]/5
-        border border-[var(--accent)]/20
+        bg-[var(--accent-light)]
         rounded-full
         ${className}
       `}

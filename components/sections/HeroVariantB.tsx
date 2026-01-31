@@ -26,11 +26,11 @@ export function HeroVariantB() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-            className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[var(--foreground)] mb-6"
+            className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-[var(--foreground)] mb-6"
           >
-            The fastest way to{" "}
-            <span className="relative">
-              <span className="relative z-10 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent">
+            The fastest way to
+            <span className="lg:block">
+              <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent">
                 ship products
               </span>
             </span>
