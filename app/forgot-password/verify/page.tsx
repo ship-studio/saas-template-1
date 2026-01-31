@@ -8,17 +8,18 @@ import { Button } from "@/components/ui/Button";
 
 export default function VerifyCodePage() {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
-  const [email, setEmail] = useState("");
+  const [email] = useState(() => {
+    // Initialize from sessionStorage on client
+    if (typeof window !== "undefined") {
+      return sessionStorage.getItem("resetEmail") || "";
+    }
+    return "";
+  });
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const router = useRouter();
 
   useEffect(() => {
-    // Get email from sessionStorage
-    const storedEmail = sessionStorage.getItem("resetEmail");
-    if (storedEmail) {
-      setEmail(storedEmail);
-    }
-    // Focus first input
+    // Focus first input on mount
     inputRefs.current[0]?.focus();
   }, []);
 

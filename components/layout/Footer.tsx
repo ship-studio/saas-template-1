@@ -1,6 +1,12 @@
 import { Container } from "@/components/ui/Container";
 
-const footerLinks = {
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+const footerLinks: Record<string, FooterLink[]> = {
   Product: [
     { label: "Features", href: "/features" },
     { label: "Integrations", href: "/integrations" },
@@ -11,19 +17,19 @@ const footerLinks = {
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
-    { label: "Press", href: "#" },
+    { label: "Press", href: "/press" },
   ],
   Resources: [
-    { label: "Documentation", href: "#" },
-    { label: "Help Center", href: "#" },
-    { label: "Community", href: "#" },
+    { label: "Documentation", href: "#", external: true },
+    { label: "Help Center", href: "#", external: true },
+    { label: "Community", href: "#", external: true },
     { label: "Contact", href: "/contact" },
   ],
   Legal: [
-    { label: "Privacy", href: "#" },
-    { label: "Terms", href: "#" },
-    { label: "Cookies", href: "#" },
-    { label: "Licenses", href: "#" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Cookies", href: "/cookies" },
+    { label: "Licenses", href: "/licenses" },
   ],
 };
 
@@ -113,9 +119,15 @@ export function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                        {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                        className="inline-flex items-center gap-1 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                       >
                         {link.label}
+                        {link.external && (
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                        )}
                       </a>
                     </li>
                   ))}
@@ -132,10 +144,10 @@ export function Footer() {
               © {new Date().getFullYear()} LaunchKit. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+              <a href="/privacy" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+              <a href="/terms" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                 Terms of Service
               </a>
             </div>

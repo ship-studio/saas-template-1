@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionChip } from "@/components/ui/SectionChip";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
@@ -115,7 +114,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
+    transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as const },
   },
 };
 

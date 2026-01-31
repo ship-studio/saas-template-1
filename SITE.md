@@ -116,6 +116,51 @@ Version history and release notes:
 - Feature request CTA section
 - Sticky Sanity CMS banner
 
+### Press Page (`/press`)
+Media resources and press coverage:
+
+- Hero with dual CTAs (download media kit, contact press)
+- Stats section (10K+ teams, $25M funding, 50+ countries, 200+ integrations)
+- Featured coverage section with publication quotes (TechCrunch, Forbes, Wired)
+- Press releases list with dates and descriptions
+- Media kit section with downloadable brand assets (logo, guidelines, screenshots, photos)
+- Press contact card with email
+- Sticky Sanity CMS banner
+
+### Privacy Page (`/privacy`)
+Privacy policy with legal content:
+
+- Hero with "Legal" SectionChip and last updated date
+- Table of contents with anchor links
+- 8 sections covering data collection, usage, sharing, security, rights, cookies, changes, and contact
+- Animated section reveals on scroll
+- Clean typography with bold highlights
+
+### Terms Page (`/terms`)
+Terms of service agreement:
+
+- Hero with "Legal" SectionChip and last updated date
+- Table of contents with anchor links
+- 13 sections covering acceptance, accounts, licensing, payment, IP, prohibited uses, disclaimers, liability, indemnification, termination, governing law, changes, and contact
+- Legal language with clear formatting
+
+### Cookies Page (`/cookies`)
+Cookie policy with interactive overview:
+
+- Hero with "Legal" SectionChip and last updated date
+- Cookie types grid showing Essential, Analytics, Functional, and Marketing cookies with Required/Optional badges
+- Table of contents with anchor links
+- 7 sections explaining cookies, usage, third parties, management, DNT, updates, and contact
+- Browser-specific instructions for managing cookies
+
+### Licenses Page (`/licenses`)
+Software licensing and open source attributions:
+
+- Hero with "Legal" SectionChip and last updated date
+- Open source libraries list with name, version, license badge, description, and GitHub links
+- Table of contents with anchor links
+- 7 sections covering software license, subscription terms, permitted use, open source, trademarks, attribution, and contact
+
 ### Careers Page (`/careers`)
 Job listings and company culture showcase:
 
@@ -260,6 +305,23 @@ Contact form with business information:
 ---
 
 ## Recent Changes
+
+- **Legal Pages**: Added 4 legal pages with consistent design:
+  - Privacy Policy (`/privacy`) - Data collection, usage, security, and user rights
+  - Terms of Service (`/terms`) - Service agreement, licensing, liability
+  - Cookie Policy (`/cookies`) - Cookie types overview, management instructions
+  - Licenses (`/licenses`) - Software licensing, open source attributions
+  - All pages feature table of contents, animated sections, and clean typography
+  - Updated Footer links to point to new pages
+
+- **Press Page**: Added press page with:
+  - Featured coverage from major publications
+  - Press releases list
+  - Downloadable media kit assets
+  - Press contact section
+  - Added to Navbar Company dropdown and Footer
+
+- **Footer Updates**: Added external link icons for Documentation, Help Center, and Community links
 
 - **Careers Page**: Added careers page with:
   - Hero section with "We're Hiring" badge

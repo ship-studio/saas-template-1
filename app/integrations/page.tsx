@@ -333,7 +333,7 @@ export default function IntegrationsPage() {
                       <span className="text-[#ce9178]">&apos;your-api-key&apos;</span>
                       <span className="text-white">);</span>
                       {"\n\n"}
-                      <span className="text-[#6a9955]">// Create a new project</span>
+                      <span className="text-[#6a9955]">{"// Create a new project"}</span>
                       {"\n"}
                       <span className="text-[#569cd6]">const</span>
                       <span className="text-white"> project </span>
