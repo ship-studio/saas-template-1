@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
+import { SectionChip } from "@/components/ui/SectionChip";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const showcaseFeatures = [
@@ -169,9 +169,9 @@ export function FeatureShowcase() {
             >
               {/* Content */}
               <ScrollReveal className="flex-1 max-w-lg" delay={0.1}>
-                <Badge variant="accent" className="mb-4">
-                  {feature.badge}
-                </Badge>
+                <div className="mb-4">
+                  <SectionChip>{feature.badge}</SectionChip>
+                </div>
                 <h3 className="font-[family-name:var(--font-display)] text-3xl lg:text-4xl font-bold text-[var(--foreground)] mb-4 tracking-tight">
                   {feature.title}
                 </h3>

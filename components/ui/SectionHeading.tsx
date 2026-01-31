@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { SectionChip } from "./SectionChip";
 
 interface SectionHeadingProps {
   badge?: string;
@@ -18,9 +19,9 @@ export function SectionHeading({
   return (
     <div className={`max-w-3xl ${alignStyles}`}>
       {badge && (
-        <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--accent-dark)] bg-[var(--accent-light)] rounded-full">
-          {badge}
-        </span>
+        <div className="mb-4">
+          <SectionChip>{badge}</SectionChip>
+        </div>
       )}
       <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--foreground)] tracking-tight">
         {title}

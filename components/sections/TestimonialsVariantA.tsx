@@ -164,15 +164,15 @@ export function TestimonialsVariantA() {
       </Container>
 
       {/* Slider */}
-      <div className="relative">
+      <div className="relative -my-4">
         {/* Fade left */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-4 bottom-4 w-24 lg:w-40 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
         {/* Fade right */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-4 bottom-4 w-24 lg:w-40 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
 
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-4 px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
+          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-8 px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
         {testimonials.map((testimonial, index) => (

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { SectionChip } from "@/components/ui/SectionChip";
 
 // Variation B: Centered with large product screenshot below
 export function HeroVariantB() {
@@ -17,18 +18,9 @@ export function HeroVariantB() {
         {/* Content */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-[var(--background)] border border-[var(--border)] shadow-sm"
-          >
-            <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">New</span>
-            <span className="text-sm text-[var(--muted)]">Introducing AI-powered workflows</span>
-            <svg className="w-4 h-4 text-[var(--muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </motion.div>
+          <div className="mb-8">
+            <SectionChip animate>Now in Beta</SectionChip>
+          </div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
