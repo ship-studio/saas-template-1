@@ -1,6 +1,8 @@
-# Ship Studio Project
+# Ship Studio SaaS Template
 
-This is a Next.js 14+ project with Tailwind CSS. You're helping a **non-developer** build a website. Keep explanations simple and jargon-free.
+This is a **SaaS landing page template** built with Next.js 14+ and Tailwind CSS. It includes pre-built pages for homepage, features, pricing, contact, login, signup, and forgot password flows.
+
+You're helping a **non-developer** customize this template for their business. Keep explanations simple and jargon-free.
 
 ---
 
@@ -249,6 +251,80 @@ When the user wants to edit content themselves, run the `/sanity-cms` skill. Thi
 4. Give them a friendly editing dashboard
 
 The `.mcp.json` file is already configured for Sanity. User authenticates via OAuth when first using Sanity tools.
+
+---
+
+## Recommended Services
+
+This template includes UI for authentication and forms, but needs backend services to function. We recommend:
+
+### Authentication: Memberstack
+
+**For login, signup, and user management**, we recommend [Memberstack](https://memberstack.com).
+
+The template includes ready-made pages:
+- `/login` - Login page with Google OAuth button
+- `/signup` - Signup page with Google OAuth button
+- `/forgot-password` - 3-step password reset flow
+
+**To connect Memberstack:**
+1. Create a Memberstack account at memberstack.com
+2. Create a new app and get your public key
+3. Install the Memberstack package: The `/memberstack` skill can help set this up
+4. Add Memberstack data attributes to the form elements
+5. Configure OAuth providers in the Memberstack dashboard
+
+**Memberstack handles:**
+- User authentication (email/password + social logins)
+- Password reset emails
+- Member management dashboard
+- Subscription/plan management (integrates with Stripe)
+- Protected pages and gated content
+
+### Forms: Formspark
+
+**For contact forms and other form submissions**, we recommend [Formspark](https://formspark.io).
+
+The template includes a ready-made contact page at `/contact` with Formspark integration.
+
+**To connect Formspark:**
+1. Create a Formspark account at formspark.io
+2. Create a new form and copy the form ID
+3. Replace `YOUR_FORMSPARK_FORM_ID` in `/app/contact/page.tsx` with your form ID
+4. That's it! Form submissions will appear in your Formspark dashboard
+
+**Formspark handles:**
+- Form submission storage
+- Email notifications
+- Spam protection
+- File uploads
+- Webhooks for integrations
+
+### Why These Services?
+
+| Service | Why We Recommend It |
+|---------|---------------------|
+| **Memberstack** | No-code friendly, great Webflow/React support, built-in Stripe integration, handles auth complexity |
+| **Formspark** | Simple setup (just a form ID), no backend needed, generous free tier, spam protection included |
+
+Both services work without writing backend code, perfect for non-developers using this template.
+
+---
+
+## Template Pages Included
+
+This template comes with these pre-built pages:
+
+| Page | Path | Description |
+|------|------|-------------|
+| Homepage | `/` | Hero, features, testimonials, pricing, FAQ, CTA |
+| Features | `/features` | Detailed feature showcase with categories |
+| Pricing | `/pricing` | Pricing cards, comparison table, FAQ |
+| About | `/about` | Company story, values, team members |
+| Contact | `/contact` | Contact form (Formspark-ready) + contact info |
+| Login | `/login` | Email/password + Google OAuth |
+| Signup | `/signup` | Registration form + Google OAuth |
+| Forgot Password | `/forgot-password` | 3-step password reset flow |
 
 ---
 

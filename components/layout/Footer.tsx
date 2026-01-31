@@ -8,7 +8,7 @@ const footerLinks = {
     { label: "Roadmap", href: "#" },
   ],
   Company: [
-    { label: "About", href: "#" },
+    { label: "About", href: "/about" },
     { label: "Blog", href: "#" },
     { label: "Careers", href: "#" },
     { label: "Press", href: "#" },
@@ -17,7 +17,7 @@ const footerLinks = {
     { label: "Documentation", href: "#" },
     { label: "Help Center", href: "#" },
     { label: "Community", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Contact", href: "/contact" },
   ],
   Legal: [
     { label: "Privacy", href: "#" },

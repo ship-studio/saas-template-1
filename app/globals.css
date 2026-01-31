@@ -42,6 +42,19 @@ body {
   color: var(--foreground);
 }
 
+/* Tighter letter-spacing on all headings */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  letter-spacing: -0.03em;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

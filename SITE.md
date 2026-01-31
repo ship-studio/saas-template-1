@@ -95,6 +95,26 @@ Three-step password reset flow:
 2. **Code Verification** (`/forgot-password/verify`) - Enter 6-digit code with auto-advance inputs, paste support, resend option
 3. **Password Reset** (`/forgot-password/reset`) - Enter and confirm new password with validation feedback, redirects to login
 
+### About Page (`/about`)
+Company information and team page:
+
+- Hero with tagline and mission statement
+- Stats bar (users, countries, uptime, support)
+- Our Story section with founding narrative
+- Values section with 4 core values
+- Team section with 6 team members
+- CTA banner linking to contact and signup
+
+### Contact Page (`/contact`)
+Contact form with business information:
+
+- Two-column layout: contact info left, form right
+- Contact info: email, phone, office address, social links
+- Form fields: name, email, subject dropdown, message
+- Formspark integration ready (replace form ID to activate)
+- Success state with confirmation message
+- Loading state with spinner
+
 ---
 
 ## Components
@@ -184,6 +204,20 @@ Three-step password reset flow:
 ---
 
 ## Recent Changes
+
+- **About Page**: Added about page with:
+  - Hero section with mission statement
+  - Stats bar (10K+ users, 50+ countries, etc.)
+  - Our Story section with company history
+  - Values section (Move fast, Quality, Win together, Stay curious)
+  - Team section with 6 team members
+  - CTA banner
+
+- **Contact Page**: Added contact page with:
+  - Formspark integration for form submissions
+  - Contact info section (email, phone, address)
+  - Social links
+  - Success/loading states
 
 - **Forgot Password Flow**: Added 3-step password reset:
   - Email entry page
