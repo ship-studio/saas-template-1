@@ -5,16 +5,9 @@ import { Button } from "@/components/ui/Button";
 export function HeroVariantB() {
   return (
     <section className="relative pt-28 pb-0 lg:pt-36 overflow-hidden">
-      {/* Background gradient + grid */}
+      {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/5 via-transparent to-transparent" />
-        <div
-          className="absolute inset-0 bg-grid"
-          style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, transparent 60%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 60%)',
-          }}
-        />
       </div>
 
       <Container>
@@ -84,7 +77,7 @@ export function HeroVariantB() {
           <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[var(--accent)]/10 to-transparent rounded-t-3xl blur-2xl" />
 
           {/* Screenshot container */}
-          <div className="relative bg-[var(--foreground)]/[0.03] rounded-t-2xl border border-[var(--border)] border-b-0 shadow-2xl shadow-[var(--foreground)]/10 overflow-hidden">
+          <div className="relative bg-white rounded-t-2xl border border-[var(--border)] border-b-0 shadow-2xl shadow-[var(--foreground)]/10 overflow-hidden">
             {/* Browser chrome */}
             <div className="flex items-center gap-4 px-4 py-3 bg-[var(--foreground)]/[0.03] border-b border-[var(--border)]">
               <div className="flex gap-1.5">

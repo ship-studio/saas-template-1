@@ -11,7 +11,20 @@ import { CTAVariantC } from "@/components/sections/CTAVariantC";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--background)]">
+    <div className="min-h-screen bg-[var(--background)] relative">
+      {/* Light grid background - hero only */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[700px] pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+          maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+        }}
+      />
       <Navbar />
       <main>
         <HeroVariantB />
